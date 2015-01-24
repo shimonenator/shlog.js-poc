@@ -13,9 +13,9 @@
         .then(function(response) {
             return response.json();
         }).then(function(json) {
-            console.log('parsed json', json);
+            Shlog.config = json;
         }).catch(function(ex) {
-            console.log('parsing failed', ex);
+            console.error('Fail: ', ex)
         });
 
      fetch('/posts.json')
