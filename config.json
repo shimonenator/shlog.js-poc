@@ -1,10 +1,18 @@
 {
-  "version": "0.1.0",
-  "name": "Shlog.js",
-  "title": "CORS enabled website",
-  "author": {
-    "name": "Шлогирани чоек",
-    "facebook": "http://facebook.com/GovnjivaMotka",
-    "twitter": "http://twitter.com/GovnjivaMotka"
-  }
+    "version": "0.1.0",
+    "name": "Shlog.js",
+    "title": "CORS enabled website",
+    "about": "",
+    "author": {
+        "name": "Шлогирани чоек",
+        "about": "",
+        "contact": {
+            "email": "slogiranicoek@slog.com"
+        },
+        "social": {
+            "facebook": "http://facebook.com/GovnjivaMotka",
+            "twitter": "http://twitter.com/GovnjivaMotka",
+            "github": "https://github.com/slogiranicoek"
+        }
+    }
 }
