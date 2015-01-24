@@ -5,54 +5,29 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Shlog.js</title>
-    <script src="libs/localforage.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/localforage/1.2.1/localforage.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
     <script src="libs/fetch.js"></script>
     <script>
-    function getFile(path, success, error, type) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    if (success) {
-                        if (type === "json") {
-                            success(JSON.parse(xhr.responseText));
-                        } else {
-                            success(xhr.responseText);
-                        }
-                    }
-                } else {
-                    if (error)
-                        error(xhr);
-                }
-            }
-        };
-        xhr.open("GET", path, true);
-        xhr.send();
-    }
+    fetch('https://dl.dropboxusercontent.com/u/844617/2014-10-14-ieisaswearword.md')
+        .then(function(response) {
+            return response.text();
+        }).then(function(r) {
+            document.getElementsByTagName('post')[0].innerHTML = marked(r);
+        });
     </script>
 </head>
 
 <body>
+
     <script>
-    localforage.setItem('my array', "proba", function(err, value) {
-        console.log(value);
-    });
+    // localforage.setItem('my array', "proba", function(err, value) {
+    //     console.log(value);
+    // });
     </script>
 
     <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
-
-    <script>
-    getFile('/config.json',
-        function(data) {
-          console.log(data.version);
-          shlog = data;
-        },
-        function(xhr) {
-            console.error(xhr);
-        },
-        "json"
-    );
-    </script>
+    <post></post>
 </body>
 
 </html>
