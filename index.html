@@ -44,9 +44,7 @@
     getFile('/config.json',
         function(data) {
             // console.log(data.posts[0]);
-            getFile(data, function(post) {
-                console.log(data);
-            })
+            console.log(data);
         },
         function(xhr) {
             console.error(xhr);
