@@ -2,13 +2,14 @@
     "ie-is-a-swearword" : {  // PERMALINK
         "date" : "2014-10-14",
         "author" : "Ђерзелез Алија",
-        "lang" : {
+        "lang" : [
             "en-US" : {
-                "title" : "IE is a swearword"
+                "title" : "IE is a swearword",
+                "content" : "_posts/2014-10-14-ieisaswearword.md"
             },
             "sr-RS" : {
                 "title" : "IE je psovka"
             }
-        }
+        ]
     }
 }
