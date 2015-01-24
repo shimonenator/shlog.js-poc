@@ -15,7 +15,7 @@
         .then(function(response) {
             return response.json();
         }).then(function(json) {
-            Shlog.config = json;
+            Shlog = json; // Shlog.config
         }).catch(function(ex) {
             console.error('Fail: ', ex)
         });
@@ -24,9 +24,7 @@
         .then(function(response) {
             return response.json();
         }).then(function(posts) {
-            Shlog = posts;
-        }).then(function(json) {
-            console.log('parsed json', json);
+            Shlog = posts; // Shlog.posts
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
