@@ -1,11 +1,28 @@
 {
-    "2014-10-14-ieisaswearword.md" : {
-        "title": "IE is a swear word",
-        "permalink": "jfqf-fqjhfq",
-        "datetime": "2014-10-14",
-        "content": {
-            "en-US": "oueefqwfhqh-en-US.md",
-            "sr-RS": "IHJFQHFQFJQF.md"
+    "ieisaswearword" : {
+        "date" : "2014-10-14",
+        "lang" : {
+            "en-US" : {
+                "title" : "IE is a swear word",
+                "permalink" : "somelink"
+            },
+            "sr-RS" : {
+                "title" : "IE je psovka",
+                "permalink" : "nekilink"
+            }
+        }
+    }
+    "someotherblogpost" : {
+        "date" : "2058-10-17",
+        "lang" : {
+            "en-US" : {
+                "title" : "Title",
+                "permalink" : "somelink"
+            },
+            "sr-RS" : {
+                "title" : "Naslov",
+                "permalink" : "nekilink"
+            }
         }
     }
 }
