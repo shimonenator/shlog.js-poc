@@ -10,6 +10,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
     <script src="libs/fetch.js"></script>
     <script>
+    var Shlog = {};
     fetch('/config.json')
         .then(function(response) {
             return response.json()
