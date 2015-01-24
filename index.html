@@ -6,17 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Shlog.js</title>
     <script src="libs/localforage.min.js"></script>
-</head>
-
-<body>
-    <script>
-    localforage.setItem('my array', "proba", function(err, value) {
-        console.log(value);
-    });
-    </script>
-
-    <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
-
     <script>
     function getFile(path, success, error, type) {
         var xhr = new XMLHttpRequest();
@@ -39,7 +28,20 @@
         xhr.open("GET", path, true);
         xhr.send();
     }
-        getFile('config.json',
+    </script>
+</head>
+
+<body>
+    <script>
+    localforage.setItem('my array', "proba", function(err, value) {
+        console.log(value);
+    });
+    </script>
+
+    <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
+
+    <script>
+    getFile('/config.json',
         function(data) {
             // console.log(data.posts[0]);
             getFile(data, function(post) {
