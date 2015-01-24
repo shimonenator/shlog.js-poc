@@ -22,7 +22,8 @@
 
     fetch('/posts.json')
         .then(function(response) {
-            var posts = response.json();
+            return response.json();
+        }).then(function(posts) {
             posts.forEach(function(record) {
                 console.log(record);
             });
