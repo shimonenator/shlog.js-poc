@@ -20,21 +20,24 @@
             console.error('Fail: ', ex)
         });
 
-     fetch('/posts.json')
-         .then(function(response) {
-             return response.json();
-         }).then(function(json) {
-             console.log('parsed json', json);
-         }).catch(function(ex){
-             console.log('parser error', ex);
-         });
-
-    fetch('_posts/2014-10-14-ieisaswearword.md')
+    fetch('/posts.json')
         .then(function(response) {
-            return response.text();
-        }).then(function(r) {
-            document.getElementsByTagName('post')[0].innerHTML = marked(r);
+            var posts = response.json();
+            posts.forEach(function(record) {
+                console.log(record);
+            });
+        }).then(function(json) {
+            console.log('parsed json', json);
+        }).catch(function(ex) {
+            console.log('parser error', ex);
         });
+
+    // fetch('_posts/2014-10-14-ieisaswearword.md')
+    //     .then(function(response) {
+    //         return response.text();
+    //     }).then(function(r) {
+    //         document.getElementsByTagName('post')[0].innerHTML = marked(r);
+    //     });
     </script>
 </head>
 

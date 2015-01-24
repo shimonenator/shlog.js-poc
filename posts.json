@@ -1,27 +1,13 @@
 {
-    "ieisaswearword" : {
+    "ie-is-a-swearword" : {  // PERMALINK
         "date" : "2014-10-14",
+        "author" : "Ђерзелез Алија",
         "lang" : {
             "en-US" : {
-                "title" : "IE is a swear word",
-                "permalink" : "somelink"
+                "title" : "IE is a swearword"
             },
             "sr-RS" : {
-                "title" : "IE je psovka",
-                "permalink" : "nekilink"
-            }
-        }
-    },
-    "someotherblogpost" : {
-        "date" : "2058-10-17",
-        "lang" : {
-            "en-US" : {
-                "title" : "Title",
-                "permalink" : "somelink"
-            },
-            "sr-RS" : {
-                "title" : "Naslov",
-                "permalink" : "nekilink"
+                "title" : "IE je psovka"
             }
         }
     }
