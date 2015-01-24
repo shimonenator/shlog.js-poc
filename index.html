@@ -1,19 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Shlog.js</title>
-  <script src="libs/localforage.min.js"></script>
-</head>
-<body>
-<script>
-localforage.setItem('my array', "proba", function(err, value) {
-    // This will output `1`.
-    console.log(value);
-});
-</script>
 
-  <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shlog.js</title>
+    <script src="libs/localforage.min.js"></script>
+</head>
+
+<body>
+    <script>
+    localforage.setItem('my array', "proba", function(err, value) {
+        console.log(value);
+    });
+    </script>
+
+    <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
+
+    <script>
+    function getFile(path, success, error, type) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    if (success) {
+                        if (type === "json") {
+                            success(JSON.parse(xhr.responseText));
+                        } else {
+                            success(xhr.responseText);
+                        }
+                    }
+                } else {
+                    if (error)
+                        error(xhr);
+                }
+            }
+        };
+        xhr.open("GET", path, true);
+        xhr.send();
+    }
+        getFile('config.json',
+        function(data) {
+            // console.log(data.posts[0]);
+            getFile(data, function(post) {
+                console.log(data);
+            })
+        },
+        function(xhr) {
+            console.error(xhr);
+        },
+        "json"
+    );
+    </script>
 </body>
+
 </html>
