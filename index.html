@@ -9,6 +9,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
     <script src="libs/fetch.js"></script>
     <script>
+
+    fetch("config.json").then(function(res){
+      console.log(res.json);
+    })
     fetch('_posts/2014-10-14-ieisaswearword.md')
         .then(function(response) {
             return response.text();
