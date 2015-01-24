@@ -41,14 +41,16 @@
     <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
 
     <script>
-    var shlog = getFile('/config.json',
-        function(data) {},
+    getFile('/config.json',
+        function(data) {
+          console.log(data.version);
+          shlog = data;
+        },
         function(xhr) {
             console.error(xhr);
         },
         "json"
     );
-    console.log(shlog.version);
     </script>
 </body>
 
