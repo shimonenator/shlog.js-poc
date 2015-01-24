@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+#version 1.0 1-24-2015
+
+CACHE:
+
+#images
+http://development.ss15-promises.divshot.io/assets/shlog.png
+
+#javascript files
+http://cdnjs.cloudflare.com/ajax/libs/localforage/1.2.1/localforage.min.js
+http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js
+http://development.ss15-promises.divshot.io/libs/fetch.js
+
+NETWORK:
+*
