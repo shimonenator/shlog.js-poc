@@ -39,22 +39,20 @@
     Router
         .add(/about/, function() {
             alert("jes");
-        })
-        .add(function() {
-            for (var key in Shlog.posts) {
-                Router.add("/"+key+"/", function(){
-                    alert("ajaaaaaaoo");
-                }).listen();
-                console.log(key, Shlog.posts[key].author);
-                // fetch(Shlog.posts[key].content)
-                //     .then(function(response) {
-                //         return response.text();
-                //     })
-                //     .then(function(text) {
-                //         // document.getElementsByTagName('post')[0].innerHTML = marked(text);
-                //     })
-            }
         }).listen();
+    for (var key in Shlog.posts) {
+        Router.add("/" + key + "/", function() {
+            alert("ajaaaaaaoo");
+        }).listen();
+        console.log(key, Shlog.posts[key].author);
+        // fetch(Shlog.posts[key].content)
+        //     .then(function(response) {
+        //         return response.text();
+        //     })
+        //     .then(function(text) {
+        //         // document.getElementsByTagName('post')[0].innerHTML = marked(text);
+        //     })
+    }
     </script>
 </head>
 
