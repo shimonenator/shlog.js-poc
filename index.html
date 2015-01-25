@@ -9,6 +9,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/localforage/1.2.1/localforage.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
     <script src="libs/fetch.js"></script>
+    <script src="libs/helpers.js"></script>
     <script>
     var Shlog = {};
     fetch('/config.json')
@@ -44,6 +45,9 @@
     // localforage.setItem('my array', "proba", function(err, value) {
     //     console.log(value);
     // });
+    jsonp("http://ajaxhttpheaders2.appspot.com/", function(data){
+      console.log(data);
+    });
     </script>
 
     <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
