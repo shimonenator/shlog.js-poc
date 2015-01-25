@@ -22,21 +22,15 @@
             console.error('Fail: ', ex)
         });
     Router.listen();
+    Router.add(function() {
+        console.log(Router.getFragment());
+        document.getElementsByTagName('post')[0].innerHTML = "";
+    });
     fetch('/posts.json')
         .then(function(response) {
             return response.json();
         }).then(function(posts) {
             Shlog.posts = posts; // Shlog.posts
-            // Router.add(/welcome-to-shlog/, function() {
-            //     console.warn("TEST");
-            //     fetch(Shlog.posts["welcome-to-shlog"].content)
-            //         .then(function(response) {
-            //             return response.text();
-            //         })
-            //         .then(function(text) {
-            //             document.getElementsByTagName('post')[0].innerHTML = marked(text);
-            //         })
-            // });
             for (var key in Shlog.posts) {
                 Router.add(new RegExp(key), function() {
                         console.warn("TEST");
@@ -48,7 +42,6 @@
                                 document.getElementsByTagName('post')[0].innerHTML = marked(text);
                             })
                     })
-                    // console.log(key, Shlog.posts[key].author);
             }
         }).catch(function(ex) {
             console.log('parser error', ex);
