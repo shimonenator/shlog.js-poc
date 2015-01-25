@@ -9,7 +9,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/localforage/1.2.1/localforage.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
     <script src="libs/fetch.js"></script>
-    <script src="libs/helpers.js"></script>
     <script src="libs/router.js"></script>
     <script>
     var Shlog = {};
@@ -39,6 +38,7 @@
                 Router.add(new RegExp(key), function() {
                     document.getElementById("article-title").innerHTML = Shlog.posts[Router.getFragment()].title;
                     document.querySelectorAll('article > time')[0].innerHTML = Shlog.posts[Router.getFragment()].datetime;
+                    document.querySelectorAll('article > author')[0].innerHTML = Shlog.posts[Router.getFragment()].author;
                     // localforage.getItem(key).then(function(value) {
                     //     console.log("Retreiving: " + key);
                         // if (value != null) {
@@ -90,7 +90,7 @@
     <h1><a href="#" onclick="Router.navigate();"><img src="assets/shlog.png" alt="Shlog.js"></a></h1>
     <article>
         <h2 id="article-title"></h2>
-        <time></time>
+        Posted on <time></time> by <author></author>
         <post>This is the area where the articles will be printed.</post>
     </article>
     <div id="link-farm"></div>
