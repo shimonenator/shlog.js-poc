@@ -42,8 +42,8 @@
         })
         .add(function() {
             for (var key in Shlog.posts) {
-                Router.add(key, function(){
-                    console.log(key);
+                Router.add("/"+key+"/", function(){
+                    alert("ajaaaaaaoo");
                 }).listen();
                 console.log(key, Shlog.posts[key].author);
                 // fetch(Shlog.posts[key].content)
