@@ -30,6 +30,8 @@
             for (var key in Shlog.posts) {
                 Router.add(new RegExp(key), function() {
                     console.warn("TEST");
+                    document.getElementsById("article-title").innerHTML = Shlog.posts[Router.getFragment()].title;
+                    document.querySelectorAll('article > time')[0].innerHTML = Shlog.posts[Router.getFragment()].datetime;
                     fetch(Shlog.posts[Router.getFragment()].content)
                         .then(function(response) {
                             return response.text();
@@ -42,14 +44,16 @@
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
-    Router.add(function() {
-        console.log(Router.getFragment());
-        document.getElementsByTagName('post')[0].innerHTML = "";
-    });
+    // Router.add(function() {
+    //     console.log(Router.getFragment());
+    //     document.getElementsByTagName('post')[0].innerHTML = "";
+    // });
     Router.config({
         mode: 'history'
     });
-    // Routes
+
+
+    // Link generation
     </script>
 </head>
 
@@ -65,7 +69,12 @@
     </script>
 
     <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
-    <post></post>
+    <article>
+        <h2 id="article-title"></h2>
+        <time></time>
+        <post>This is the area where the articles will be printed.</post>
+    </article>
+    <a href="#" onclick="Router.navigate('welcome-to-shlog');">Welcome to Shlog.js</a>
 </body>
 
 </html>
