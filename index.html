@@ -32,7 +32,7 @@
                     alert("jes");
                 })
             for (var key in Shlog.posts) {
-                Router.add("/" + key + "/", function() {
+                Router.add("/" + key + "/", function(Shlog) {
                     console.warn("TEST");
                     fetch(Shlog.posts[Router.getFragment()].content)
                         .then(function(response) {
@@ -51,25 +51,6 @@
     Router.config({
         mode: 'history'
     });
-
-    (function(history) {
-        var pushState = history.pushState;
-        history.pushState = function(state) {
-            if (typeof history.onpushstate == "function") {
-                history.onpushstate({
-                    state: state
-                });
-            }
-            // whatever else you want to do
-            // maybe call onhashchange e.handler
-            return pushState.apply(history, arguments);
-        }
-    })(window.history);
-
-
-    window.onpopstate = function(event) {
-        alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
-    };
     // Routes
     </script>
 </head>
