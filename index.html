@@ -30,7 +30,7 @@
             for (var key in Shlog.posts) {
                 Router.add(new RegExp(key), function() {
                     console.warn("TEST");
-                    document.getElementsById("article-title").innerHTML = Shlog.posts[Router.getFragment()].title;
+                    document.getElementById("article-title").innerHTML = Shlog.posts[Router.getFragment()].title;
                     document.querySelectorAll('article > time')[0].innerHTML = Shlog.posts[Router.getFragment()].datetime;
                     fetch(Shlog.posts[Router.getFragment()].content)
                         .then(function(response) {
