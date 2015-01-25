@@ -1,4 +1,4 @@
-{
+[
     "welcome-to-shlog": {
         "datetime": "2015-01-25",
         "author": "Марко Кажић",
@@ -11,4 +11,4 @@
         "content" : "_posts/target-ie-in-css.md",
         "title" : "Target Internet Explorer in CSS"
     }
-}
+]
