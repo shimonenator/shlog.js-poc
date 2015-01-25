@@ -38,7 +38,7 @@
             //         })
             // });
             for (var key in Shlog.posts) {
-                Router.add(new RegExp(key), function(Shlog) {
+                Router.add(new RegExp(key), function() {
                         console.warn("TEST");
                         fetch(Shlog.posts[Router.getFragment()].content)
                             .then(function(response) {
