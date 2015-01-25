@@ -28,7 +28,7 @@
             Shlog.posts = posts; // Shlog.posts
             for (var key in Shlog.posts) {
                 // console.log(key, Shlog.posts[key].author);
-                fetch("Shlog.posts[key].content")
+                fetch(Shlog.posts[key].content)
                     .then(function(response) {
                         return response.text();
                     })
