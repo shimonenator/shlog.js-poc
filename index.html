@@ -39,12 +39,12 @@
                 Router.add(new RegExp(key), function() {
                     document.getElementById("article-title").innerHTML = Shlog.posts[Router.getFragment()].title;
                     document.querySelectorAll('article > time')[0].innerHTML = Shlog.posts[Router.getFragment()].datetime;
-                    localforage.getItem(key).then(function(value) {
-                        console.log("Retreiving: " + key);
-                        if (value != null) {
-                            console.log(key + " retrieved from localforage");
-                            document.getElementsByTagName('post')[0].innerHTML = marked(value);
-                        } else {
+                    // localforage.getItem(key).then(function(value) {
+                    //     console.log("Retreiving: " + key);
+                        // if (value != null) {
+                        //     console.log(key + " retrieved from localforage");
+                        //     document.getElementsByTagName('post')[0].innerHTML = marked(value);
+                        // } else {
                             fetch(Shlog.posts[Router.getFragment()].content)
                                 .then(function(response) {
                                     return response.text();
@@ -55,8 +55,8 @@
                                         console.log(key + " saved with localforage");
                                     });
                                 })
-                        };
-                    })
+                        // };
+                    // })
 
                 })
             }
