@@ -22,10 +22,6 @@
             console.error('Fail: ', ex)
         });
     Router.listen();
-    Router.add(function() {
-        console.log(Router.getFragment());
-        document.getElementsByTagName('post')[0].innerHTML = "";
-    });
     fetch('/posts.json')
         .then(function(response) {
             return response.json();
@@ -33,20 +29,23 @@
             Shlog.posts = posts; // Shlog.posts
             for (var key in Shlog.posts) {
                 Router.add(new RegExp(key), function() {
-                        console.warn("TEST");
-                        fetch(Shlog.posts[Router.getFragment()].content)
-                            .then(function(response) {
-                                return response.text();
-                            })
-                            .then(function(text) {
-                                document.getElementsByTagName('post')[0].innerHTML = marked(text);
-                            })
-                    })
+                    console.warn("TEST");
+                    fetch(Shlog.posts[Router.getFragment()].content)
+                        .then(function(response) {
+                            return response.text();
+                        })
+                        .then(function(text) {
+                            document.getElementsByTagName('post')[0].innerHTML = marked(text);
+                        })
+                })
             }
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
-
+    Router.add(function() {
+        console.log(Router.getFragment());
+        document.getElementsByTagName('post')[0].innerHTML = "";
+    });
     Router.config({
         mode: 'history'
     });
