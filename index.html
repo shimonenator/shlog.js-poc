@@ -10,6 +10,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
     <script src="libs/fetch.js"></script>
     <script src="libs/helpers.js"></script>
+    <script src="libs/helpers.js"></script>
     <script>
     var Shlog = {};
     fetch('/config.json')
@@ -47,6 +48,12 @@
     //         document.getElementsByTagName('post')[0].innerHTML = marked(r);
     //     });
     </script>
+    <script type="text/html" id="id1">
+        <h1>Page 1: <%= greeting %></h1>
+        <p>
+            <%=m oreText %>
+        </p>
+    </script>
 </head>
 
 <body>
@@ -62,6 +69,11 @@
 
     <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
     <post></post>
+    <script>
+    route('/id1', 'id1', function() {
+        alert("Testing out the router");
+    });
+    </script>
 </body>
 
 </html>
