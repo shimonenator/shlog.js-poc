@@ -1,20 +1,20 @@
 [{
-    "welcome-to-shlog": {
+    "welcome-to-shlog": [{
         "datetime": "2015-01-25",
         "author": "Марко Кажић",
         "content" : "_posts/welcome-to-shlog.md",
         "title" : "Welcome to Shlog.js"
-    },
-    "target-ie-in-css": {
+    }],
+    "target-ie-in-css": [{
         "datetime": "2015-01-25",
         "author": "Марко Кажић",
         "content" : "_posts/target-ie-in-css.md",
         "title" : "Target Internet Explorer in CSS"
-    },
-    "sesomange": {
+    }],
+    "sesomange": [{
         "datetime": "2015-01-25",
         "author": "Марко Кажић",
         "content" : "_posts/sesomange.md",
         "title" : "Target Internet Explorer in CSS"
-    }
+    }]
 }]
