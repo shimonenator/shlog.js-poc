@@ -22,6 +22,7 @@
             console.error('Fail: ', ex)
         });
     Router.listen();
+    Router.navigate();
     fetch('/posts.json')
         .then(function(response) {
             return response.json();
