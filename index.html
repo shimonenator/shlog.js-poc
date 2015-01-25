@@ -51,9 +51,9 @@
                                 })
                                 .then(function(text) {
                                     document.getElementsByTagName('post')[0].innerHTML = marked(text);
-                                    localforage.setItem(key, text, function(err, value) {
-                                        console.log(key + " saved with localforage");
-                                    });
+                                    // localforage.setItem(key, text, function(err, value) {
+                                    //     console.log(key + " saved with localforage");
+                                    // });
                                 })
                         // };
                     // })
