@@ -27,22 +27,29 @@
             return response.json();
         }).then(function(posts) {
             Shlog.posts = posts; // Shlog.posts
-            Router.add(/about/, function() {
-                alert("jes");
-            });
-            for (var key in Shlog.posts) {
-                Router.add("/" + key + "/", function(Shlog) {
-                        console.warn("TEST");
-                        fetch(Shlog.posts[Router.getFragment()].content)
-                            .then(function(response) {
-                                return response.text();
-                            })
-                            .then(function(text) {
-                                document.getElementsByTagName('post')[0].innerHTML = marked(text);
-                            })
+            Router.add(/welcome-to-shlog/, function() {
+                console.warn("TEST");
+                fetch(Shlog.posts["welcome-to-shlog"].content)
+                    .then(function(response) {
+                        return response.text();
                     })
-                    // console.log(key, Shlog.posts[key].author);
-            }
+                    .then(function(text) {
+                        document.getElementsByTagName('post')[0].innerHTML = marked(text);
+                    })
+            });
+            // for (var key in Shlog.posts) {
+            //     Router.add("/" + key + "/", function(Shlog) {
+            //             console.warn("TEST");
+            //             fetch(Shlog.posts[Router.getFragment()].content)
+            //                 .then(function(response) {
+            //                     return response.text();
+            //                 })
+            //                 .then(function(text) {
+            //                     document.getElementsByTagName('post')[0].innerHTML = marked(text);
+            //                 })
+            //         })
+            //         // console.log(key, Shlog.posts[key].author);
+            // }
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
