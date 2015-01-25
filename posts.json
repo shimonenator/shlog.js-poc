@@ -10,5 +10,11 @@
         "author": "Марко Кажић",
         "content" : "_posts/target-ie-in-css.md",
         "title" : "Target Internet Explorer in CSS"
+    },
+    "sesomange": {
+        "datetime": "2015-01-25",
+        "author": "Марко Кажић",
+        "content" : "_posts/sesomange.md",
+        "title" : "Target Internet Explorer in CSS"
     }
 }
