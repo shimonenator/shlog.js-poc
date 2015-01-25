@@ -66,6 +66,7 @@
     Router.add(/^$/, function() {
         console.log(Router.getFragment());
         document.getElementsByTagName('post')[0].innerHTML = "";
+        document.getElementById('meta').remove();
     });
     Router.config({
         mode: 'history'
@@ -90,7 +91,7 @@
     <h1><a href="#" onclick="Router.navigate();"><img src="assets/shlog.png" alt="Shlog.js"></a></h1>
     <article>
         <h2 id="article-title"></h2>
-        Posted on <time></time> by <author></author>
+        <div id="meta">Posted on <time></time> by <author></author></div>
         <post>This is the area where the articles will be printed.</post>
     </article>
     <div id="link-farm"></div>
