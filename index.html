@@ -33,7 +33,7 @@
                 var linkText = document.createTextNode(Shlog.posts[key].title);
                 a.appendChild(linkText);
                 a.title = Shlog.posts[key].title;
-                a.setAttribute('onclick','Router.navigate(key);');
+                a.setAttribute('onclick','Router.navigate('key');');
                 a.href = "#";
                 document.getElementById("link-farm").appendChild(a);
                 Router.add(new RegExp(key), function() {
