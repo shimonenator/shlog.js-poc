@@ -26,24 +26,23 @@
         .then(function(response) {
             return response.json();
         }).then(function(posts) {
-            Shlog.posts = posts;
+            Shlog.posts = posts; // Shlog.posts
             Router
                 .add(/about/, function() {
                     alert("jes");
                 }).listen();
             for (var key in Shlog.posts) {
                 Router.add("/" + key + "/", function() {
-                    alert("ajaaaaaaoo");
+                    fetch(Shlog.posts[Router.getFragment()].content)
+                        .then(function(response) {
+                            return response.text();
+                        })
+                        .then(function(text) {
+                            document.getElementsByTagName('post')[0].innerHTML = marked(text);
+                        })
                 }).listen();
-                console.log(key, Shlog.posts[key].author);
-                // fetch(Shlog.posts[key].content)
-                //     .then(function(response) {
-                //         return response.text();
-                //     })
-                //     .then(function(text) {
-                //         // document.getElementsByTagName('post')[0].innerHTML = marked(text);
-                //     })
-            } // Shlog.posts
+                // console.log(key, Shlog.posts[key].author);
+            }
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
