@@ -29,11 +29,18 @@
         }).then(function(posts) {
             Shlog.posts = posts; // Shlog.posts
             for (var key in Shlog.posts) {
+                var a = document.createElement('a');
+                var linkText = document.createTextNode(key.title);
+                a.appendChild(linkText);
+                a.title = key.title;
+                a.setAttribute('onclick','Router.navigate(key);');
+                a.href = "#";
+                document.getElementById("link-farm").appendChild(a);
                 Router.add(new RegExp(key), function() {
                     document.getElementById("article-title").innerHTML = Shlog.posts[Router.getFragment()].title;
                     document.querySelectorAll('article > time')[0].innerHTML = Shlog.posts[Router.getFragment()].datetime;
                     localforage.getItem(key).then(function(value) {
-                        console.log("Retreiving: "+ key);
+                        console.log("Retreiving: " + key);
                         if (value != null) {
                             console.log(key + " retrieved from localforage");
                             document.getElementsByTagName('post')[0].innerHTML = marked(value);
@@ -86,7 +93,7 @@
         <time></time>
         <post>This is the area where the articles will be printed.</post>
     </article>
-    <a href="#" onclick="Router.navigate('welcome-to-shlog');">Welcome to Shlog.js</a>
+    <div id="link-farm"></div>
 </body>
 
 </html>
