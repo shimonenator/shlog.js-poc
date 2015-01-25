@@ -6,5 +6,6 @@ Client-side, JS-implemented, Markdown loving blog. Let's you host you content on
  - window.fetch
  - Promises
  - localForage & IndexedDB
+ - History API
  - AppCache
  - Marked (*Markdown client-side parsing*)

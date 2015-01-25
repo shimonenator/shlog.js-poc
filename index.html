@@ -27,38 +27,33 @@
             return response.json();
         }).then(function(posts) {
             Shlog.posts = posts; // Shlog.posts
-            for (var key in Shlog.posts) {
-                // console.log(key, Shlog.posts[key].author);
-                fetch(Shlog.posts[key].content)
-                    .then(function(response) {
-                        return response.text();
-                    })
-                    .then(function(text) {
-                        document.getElementsByTagName('post')[0].innerHTML = marked(text);
-                    })
-            }
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
-
-    // fetch('_posts/2014-10-14-ieisaswearword.md')
-    //     .then(function(response) {
-    //         return response.text();
-    //     }).then(function(r) {
-    //         document.getElementsByTagName('post')[0].innerHTML = marked(r);
-    //     });
 
     Router.config({
         mode: 'history'
     });
 
-    // adding routes
+    // Routes
     Router
         .add(/about/, function() {
             alert("jes");
         })
         .add(function() {
-            console.log('default');
+            for (var key in Shlog.posts) {
+                Router.add("/"+key+"/", function(){
+                    console.log(key);
+                })
+                // console.log(key, Shlog.posts[key].author);
+                // fetch(Shlog.posts[key].content)
+                //     .then(function(response) {
+                //         return response.text();
+                //     })
+                //     .then(function(text) {
+                //         // document.getElementsByTagName('post')[0].innerHTML = marked(text);
+                //     })
+            }
         }).listen();
     </script>
 </head>
@@ -69,9 +64,9 @@
     // localforage.setItem('my array', "proba", function(err, value) {
     //     console.log(value);
     // });
-    var userInfo = jsonp("http://ajaxhttpheaders2.appspot.com/", function(data) {
-        console.log(data);
-    });
+    // var userInfo = jsonp("http://ajaxhttpheaders2.appspot.com/", function(data) {
+    //     console.log(data);
+    // });
     </script>
 
     <h1><img src="assets/shlog.png" alt="Shlog.js"></h1>
