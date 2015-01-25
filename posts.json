@@ -1,15 +1,8 @@
 {
-    "ie-is-a-swearword": {
-        "date": "2014-10-14",
-        "author": "Ђерзелез Алија",
-        "lang": {
-            "en-US": {
-                "title": "IE is a swearword",
-                "content": "_posts/2014-10-14-ieisaswearword.md"
-            },
-            "sr-RS": {
-                "title": "IE je psovka"
-            }
-        }
+    "welcome-to-shlog": {
+        "date": "2015-01-25",
+        "author": "Марко Кажић",
+        "content" : "_posts/welcome-to-shlog.md",
+        "title" : "Welcome to Shlog.js"
     }
 }

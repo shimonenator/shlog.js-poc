@@ -1,11 +1,3 @@
----
-layout: post
-title: Internet Explorer is a swearword
-subtitle: Future of The Notorious Browser
-permalink: ie-is-a-swearword
----
-
-
 Not so long ago I've listened to [Brendan Eich in JavaScript Jabber (Ep. 124)](http://javascriptjabber.com/124-jsj-the-origin-of-javascript-with-brendan-eich/) talk about the origin of JavaScript. While talking about Netscape and IE back in the day he remembered:
 
 

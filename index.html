@@ -26,6 +26,9 @@
             return response.json();
         }).then(function(posts) {
             Shlog.posts = posts; // Shlog.posts
+            for (var key in Shlog.posts) {
+                console.log(key, Shlog.posts[key].author);
+            }
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
@@ -45,8 +48,8 @@
     // localforage.setItem('my array', "proba", function(err, value) {
     //     console.log(value);
     // });
-    var userInfo = jsonp("http://ajaxhttpheaders2.appspot.com/", function(data){
-      console.log(data);
+    var userInfo = jsonp("http://ajaxhttpheaders2.appspot.com/", function(data) {
+        console.log(data);
     });
     </script>
 
