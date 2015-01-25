@@ -1,16 +1,14 @@
 {
-    "posts": {
-        "ie-is-a-swearword": {
-            "date": "2014-10-14",
-            "author": "Ђерзелез Алија",
-            "lang": {
-                "en-US": {
-                    "title": "IE is a swearword",
-                    "content": "_posts/2014-10-14-ieisaswearword.md"
-                },
-                "sr-RS": {
-                    "title": "IE je psovka"
-                }
+    "ie-is-a-swearword": {
+        "date": "2014-10-14",
+        "author": "Ђерзелез Алија",
+        "lang": {
+            "en-US": {
+                "title": "IE is a swearword",
+                "content": "_posts/2014-10-14-ieisaswearword.md"
+            },
+            "sr-RS": {
+                "title": "IE je psovka"
             }
         }
     }

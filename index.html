@@ -16,7 +16,7 @@
         .then(function(response) {
             return response.json();
         }).then(function(json) {
-            Shlog += json; // Shlog.config
+            Shlog.config = json; // Shlog.config
         }).catch(function(ex) {
             console.error('Fail: ', ex)
         });
@@ -25,7 +25,7 @@
         .then(function(response) {
             return response.json();
         }).then(function(posts) {
-            Shlog += posts; // Shlog.posts
+            Shlog.posts = posts; // Shlog.posts
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
@@ -45,7 +45,7 @@
     // localforage.setItem('my array', "proba", function(err, value) {
     //     console.log(value);
     // });
-    jsonp("http://ajaxhttpheaders2.appspot.com/", function(data){
+    var userInfo = jsonp("http://ajaxhttpheaders2.appspot.com/", function(data){
       console.log(data);
     });
     </script>
