@@ -30,9 +30,10 @@
             Router
                 .add(/about/, function() {
                     alert("jes");
-                }).listen();
+                })
             for (var key in Shlog.posts) {
                 Router.add("/" + key + "/", function() {
+                    console.warn("TEST");
                     fetch(Shlog.posts[Router.getFragment()].content)
                         .then(function(response) {
                             return response.text();
