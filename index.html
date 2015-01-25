@@ -27,7 +27,14 @@
         }).then(function(posts) {
             Shlog.posts = posts; // Shlog.posts
             for (var key in Shlog.posts) {
-                console.log(key, Shlog.posts[key].author);
+                // console.log(key, Shlog.posts[key].author);
+                fetch("Shlog.posts[key].content")
+                    .then(function(response) {
+                        return response.text();
+                    })
+                    .then(function(text) {
+                        document.getElementsByTagName('post')[0].innerHTML = marked(text);
+                    })
             }
         }).catch(function(ex) {
             console.log('parser error', ex);
