@@ -30,16 +30,25 @@
             Shlog.posts = posts; // Shlog.posts
             for (var key in Shlog.posts) {
                 Router.add(new RegExp(key), function() {
-                    console.warn("TEST");
                     document.getElementById("article-title").innerHTML = Shlog.posts[Router.getFragment()].title;
                     document.querySelectorAll('article > time')[0].innerHTML = Shlog.posts[Router.getFragment()].datetime;
-                    fetch(Shlog.posts[Router.getFragment()].content)
-                        .then(function(response) {
-                            return response.text();
-                        })
-                        .then(function(text) {
-                            document.getElementsByTagName('post')[0].innerHTML = marked(text);
-                        })
+                    localforage.getItem(key).then(function(value) {
+                        if (value != null) {
+                            document.getElementsByTagName('post')[0].innerHTML = marked(value);
+                        } else {
+                            fetch(Shlog.posts[Router.getFragment()].content)
+                                .then(function(response) {
+                                    return response.text();
+                                })
+                                .then(function(text) {
+                                    document.getElementsByTagName('post')[0].innerHTML = marked(text);
+                                    localforage.setItem(key, text, function(err, value) {
+                                        console.log(key + "saved with localforage");
+                                    });
+                                })
+                        };
+                    })
+
                 })
             }
         }).catch(function(ex) {
@@ -47,7 +56,7 @@
         });
     Router.add(/^$/, function() {
         console.log(Router.getFragment());
-        document.getElementsByTagName('post')[0].innerHTML = "";
+        document.getElementsByTagName('article')[0].innerHTML = "";
     });
     Router.config({
         mode: 'history'
