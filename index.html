@@ -42,10 +42,10 @@
         })
         .add(function() {
             for (var key in Shlog.posts) {
-                Router.add("/"+key+"/", function(){
+                Router.add(key, function(){
                     console.log(key);
-                })
-                // console.log(key, Shlog.posts[key].author);
+                }).listen();
+                console.log(key, Shlog.posts[key].author);
                 // fetch(Shlog.posts[key].content)
                 //     .then(function(response) {
                 //         return response.text();
