@@ -45,10 +45,10 @@
         }).catch(function(ex) {
             console.log('parser error', ex);
         });
-    // Router.add(function() {
-    //     console.log(Router.getFragment());
-    //     document.getElementsByTagName('post')[0].innerHTML = "";
-    // });
+    Router.add(/^$/, function() {
+        console.log(Router.getFragment());
+        document.getElementsByTagName('post')[0].innerHTML = "";
+    });
     Router.config({
         mode: 'history'
     });
