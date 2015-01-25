@@ -33,7 +33,7 @@
                     document.getElementById("article-title").innerHTML = Shlog.posts[Router.getFragment()].title;
                     document.querySelectorAll('article > time')[0].innerHTML = Shlog.posts[Router.getFragment()].datetime;
                     localforage.getItem(key).then(function(value) {
-                        console.log("Retreiving: " + key);
+                        console.log("Retreiving: "+ key);
                         if (value != null) {
                             console.log(key + " retrieved from localforage");
                             document.getElementsByTagName('post')[0].innerHTML = marked(value);
